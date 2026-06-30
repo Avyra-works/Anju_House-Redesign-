@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Game Nights | ANJU HOUSE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-panel {
+            background: rgba(13, 15, 13, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(229, 191, 163, 0.3);
+        }
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+        .sep-line {
+            height: 0.5px;
+            background: #e5bfa3;
+            opacity: 0.3;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#432b17",
+                      "surface-bright": "#383a37",
+                      "on-secondary-fixed": "#2b1705",
+                      "outline": "#8e9192",
+                      "on-error-container": "#ffdad6",
+                      "inverse-surface": "#e2e3df",
+                      "primary-container": "#121212",
+                      "surface-container-highest": "#333533",
+                      "surface-container-high": "#282a28",
+                      "error": "#ffb4ab",
+                      "secondary-fixed": "#ffdcc2",
+                      "on-surface": "#e2e3df",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-tertiary-container": "#987a00",
+                      "inverse-primary": "#5f5e5e",
+                      "on-secondary-fixed-variant": "#5b412c",
+                      "secondary-fixed-dim": "#e5bfa3",
+                      "surface-container": "#1e201e",
+                      "inverse-on-surface": "#2f312e",
+                      "surface-container-low": "#1a1c1a",
+                      "outline-variant": "#444748",
+                      "tertiary-container": "#181100",
+                      "primary-fixed": "#e5e2e1",
+                      "tertiary-fixed": "#ffe088",
+                      "on-primary-container": "#7e7d7d",
+                      "primary": "#c8c6c5",
+                      "surface-container-lowest": "#0d0f0d",
+                      "error-container": "#93000a",
+                      "on-primary": "#313030",
+                      "surface-dim": "#121412",
+                      "on-error": "#690005",
+                      "surface-variant": "#333533",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-surface-variant": "#c4c7c7",
+                      "surface": "#121412",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "on-tertiary": "#3c2f00",
+                      "surface-tint": "#c8c6c5",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "tertiary": "#e9c349",
+                      "on-primary-fixed-variant": "#474646",
+                      "background": "#121412",
+                      "on-secondary-container": "#d6b196",
+                      "secondary": "#e5bfa3",
+                      "secondary-container": "#5e442e",
+                      "on-background": "#e2e3df"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "margin-mobile": "24px",
+                      "stack-md": "64px",
+                      "container-max": "1440px",
+                      "stack-xl": "120px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["EB Garamond"],
+                      "display-lg": ["EB Garamond"],
+                      "headline-lg": ["EB Garamond"],
+                      "display-lg-mobile": ["EB Garamond"],
+                      "label-caps": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                      "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "display-lg-mobile": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 shadow-sm transition-all duration-500 ease-in-out">
+<nav class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface tracking-tighter">ANJU HOUSE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Reservations</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-secondary border-b border-secondary pb-1" href="#">Game Nights</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Visit Us</a>
+</div>
+<button class="bg-secondary text-on-secondary px-8 py-3 font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-transform duration-200">
+                Book Now
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
+<div class="w-full h-full bg-cover bg-center scale-105 transform motion-safe:animate-[pulse_8s_ease-in-out_infinite]" data-alt="A cinematic, low-angle shot of a vibrant, upscale beer garden at night. The scene is filled with energy, featuring diverse crowds cheering and watching a large screen displaying a basketball game. Warm walnut wood textures and copper accents are illuminated by soft, atmospheric string lights, creating a sophisticated yet high-energy sport-viewing environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDc9wjwKLIznEe6IlYFg6o0_iTdq-qIC3u_5pYd_M5bciuxQmx2UORwnVXvGFNRJcy6NnfGBcoqM4k4oswa6OmdNNUQSdLTbkCaV5l9AAhe186uw1F1HyHq5htUeYkKPUVLOpOVJxeBKXP2JcijYh6foFBdKT6IBfi9vXkCU7Uy9ReFzfBnCyEC9bfjtcAHiGiRi1ozzLU0eO8lrALNaVBRvnvUUWoOTSl3LlPabIuNfOVRe3Ca8eStyAxYvoTddtxblddldonm96A1')"></div>
+</div>
+<div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-4xl">
+<span class="font-label-caps text-label-caps uppercase tracking-[0.3em] text-secondary mb-6 block">Live at Anju House</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8 leading-tight">Your Home for Every Goal, Basket, and Home Run.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">Experience the thrill of the game in a space where refined Korean hospitality meets the raw energy of LA’s best sports beer garden.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-secondary text-on-secondary px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-tertiary transition-colors duration-300">View Schedule</button>
+<button class="border border-outline-variant text-on-surface px-12 py-5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors duration-300">Reserve a Booth</button>
+</div>
+</div>
+</section>
+<!-- Live Schedule Grid -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Upcoming Fixtures</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Catch every major league moment on our 120" laser projectors with state-of-the-art immersive audio.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Game Card 1: Dodgers -->
+<div class="glass-panel p-8 rounded-xl hover-lift">
+<div class="flex justify-between items-start mb-12">
+<span class="bg-secondary/10 text-secondary px-4 py-1 rounded-full font-label-caps text-[10px] tracking-widest uppercase">MLB • LIVE TONIGHT</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">7:10 PM</span>
+</div>
+<div class="flex items-center justify-between mb-12">
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl">sports_baseball</span>
+</div>
+<div class="font-headline-md text-[24px]">DODGERS</div>
+</div>
+<div class="font-label-caps text-secondary text-xl font-bold italic">VS</div>
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">shield</span>
+</div>
+<div class="font-headline-md text-[24px]">GIANTS</div>
+</div>
+</div>
+<div class="sep-line mb-6"></div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-caps">
+<span>Pau Hana Happy Hour</span>
+<span class="text-secondary">UNTIL 8 PM</span>
+</div>
+</div>
+<!-- Game Card 2: NBA -->
+<div class="glass-panel p-8 rounded-xl hover-lift border-secondary/30">
+<div class="flex justify-between items-start mb-12">
+<span class="bg-tertiary/10 text-tertiary px-4 py-1 rounded-full font-label-caps text-[10px] tracking-widest uppercase">NBA • FRI MAY 24</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">5:30 PM</span>
+</div>
+<div class="flex items-center justify-between mb-12">
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl">sports_basketball</span>
+</div>
+<div class="font-headline-md text-[24px]">LAKERS</div>
+</div>
+<div class="font-label-caps text-secondary text-xl font-bold italic">VS</div>
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">shield</span>
+</div>
+<div class="font-headline-md text-[24px]">NUGGETS</div>
+</div>
+</div>
+<div class="sep-line mb-6"></div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-caps">
+<span>Group Booth Specials</span>
+<span class="text-secondary">RESERVE NOW</span>
+</div>
+</div>
+<!-- Game Card 3: World Cup -->
+<div class="glass-panel p-8 rounded-xl hover-lift">
+<div class="flex justify-between items-start mb-12">
+<span class="bg-outline/10 text-on-surface px-4 py-1 rounded-full font-label-caps text-[10px] tracking-widest uppercase">SOCCER • SAT MAY 25</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">12:00 PM</span>
+</div>
+<div class="flex items-center justify-between mb-12">
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl">sports_soccer</span>
+</div>
+<div class="font-headline-md text-[24px]">KOREA</div>
+</div>
+<div class="font-label-caps text-secondary text-xl font-bold italic">VS</div>
+<div class="text-center flex-1">
+<div class="w-16 h-16 mx-auto mb-4 bg-surface-container rounded-full flex items-center justify-center border border-outline-variant/20">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">shield</span>
+</div>
+<div class="font-headline-md text-[24px]">GERMANY</div>
+</div>
+</div>
+<div class="sep-line mb-6"></div>
+<div class="flex justify-between items-center text-on-surface-variant font-label-caps">
+<span>World Cup Breakfast</span>
+<span class="text-secondary">OPENS 11AM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Atmosphere Section -->
+<section class="bg-surface-container-low py-stack-xl">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-gutter h-auto md:h-[800px]">
+<!-- Main Image -->
+<div class="md:col-span-7 md:row-span-2 relative group overflow-hidden rounded-xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High-detail editorial photography of a large, high-definition screen in a luxury sports bar environment. The focus is on the reaction of the crowd—joyous people with hands in the air, glowing under warm ambient lights. The background shows rich walnut textures and polished copper beer taps. Cinematic lighting with deep shadows and warm highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAM1mt4_UT4JHdIJYMVZBOsuiiod819QimR9L-M1xkQl_DXwPBblmdXyzd2Tpi6LNpNMl0h1l63c61gtxW66sTyooA-lwjgHd8bG31nXsvohZmh5BQqGbKY5p7IjYUwf8YxVkX1g2D5hp1xB7supv4RYe0cmnJlDikwze_J87CZh_j2ddPtDv5OVbe9_c8L9g9CGUZBxaRf38Wsy_XlP4w7_GdrkFTfegwbHlVXqhnT6mbykGDuT09QHkQ21NIT-OEjlcYmqfj0es3S')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-12">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Unrivaled Atmosphere</h3>
+<p class="font-body-md text-on-surface-variant max-w-md">Every tackle and touchdown felt like you're on the sidelines. Our beer garden is designed for maximum acoustic immersion.</p>
+</div>
+</div>
+<!-- Top Right -->
+<div class="md:col-span-5 md:row-span-1 relative group overflow-hidden rounded-xl">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of premium Korean bar snacks: crispy fried chicken wings glazed in soy-garlic sauce, served on a modern black ceramic plate next to a frosty pint of craft beer on a walnut wood table. Warm copper lighting creates an inviting glow on the condensation of the glass." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIXSm4tNUB1hShzpMsedPKp_FA7C7eXeKCZLu-FeSh-C5HQGwZpYgqAKi6Aawd3Gb4JtbO67CsjU9nBoR1Pl2K04GYPyltphQosxgNmrhxwsFcH-4imfzwD_tl3Vnzw89_oR-ME67KIH3MVUyICpXFK_UHjgH6fMY1G5kAkPhcX5Y4sOaqKAgkGdsAF_wXN-ruvbB17oJl5pWiWChKATErGzT0s4JEQA7Oyjq1hoGXnhesVecCy8v1V2iG92OBc0O-NC3_mc2GHWgd')"></div>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface border border-white/30 px-6 py-2 backdrop-blur-sm">Refined Bites</span>
+</div>
+</div>
+<!-- Bottom Right -->
+<div class="md:col-span-5 md:row-span-1 glass-panel p-10 rounded-xl flex flex-col justify-center">
+<div class="mb-6">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h4 class="font-headline-md text-headline-md mb-2">Community First</h4>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6">At Anju House, Game Night isn't just about the score. It's about the collective roar of the crowd, the shared plates, and the stories told over a round of cold brews.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-secondary/20"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-secondary/40"></div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-secondary/60"></div>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">JOIN 200+ FANS TONIGHT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="relative py-stack-xl overflow-hidden">
+
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-12">Claim Your Front Row Seat.</h2>
+<div class="inline-flex flex-col md:flex-row items-center gap-8 bg-surface-container-highest p-4 rounded-full border border-outline-variant/30">
+<input class="bg-transparent border-none focus:ring-0 text-on-surface px-8 font-body-md w-full md:w-80" placeholder="Get game-day alerts" type="email"/>
+<button class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-transform">Notify Me</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full pt-stack-xl pb-stack-md transition-opacity duration-700">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-2">
+<div class="font-headline-lg text-headline-lg text-on-surface mb-8">ANJU HOUSE</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">Elevating the Korean bar experience through cinematic design and culinary excellence. Refined heat for the modern fan.</p>
+</div>
+<div>
+<h5 class="font-label-caps text-secondary mb-6 tracking-widest uppercase">Navigate</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Business Hours</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Valet &amp; Parking</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-secondary mb-6 tracking-widest uppercase">Contact</h5>
+<p class="font-body-md text-on-surface-variant mb-2">3500 Wilshire Blvd</p>
+<p class="font-body-md text-on-surface-variant mb-6">Los Angeles, CA 90010</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer transition-colors">chat</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-secondary cursor-pointer transition-colors">call</span>
+</div>
+</div>
+</div>
+<div class="mt-stack-md px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 py-8 border-t border-outline-variant/10">
+<p class="font-body-md text-on-surface-variant text-[14px]">© 2024 ANJU HOUSE. REFINED HEAT.</p>
+<div class="flex gap-8">
+<a class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" href="#">public</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors" href="#">alternate_email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-4');
+                header.classList.remove('py-6');
+                header.classList.add('bg-surface/95');
+            } else {
+                header.classList.add('py-6');
+                header.classList.remove('py-4');
+                header.classList.remove('bg-surface/95');
+            }
+        });
+
+        // Hover lift sound effect logic or micro-interactions could be added here
+    </script>
+</body></html>

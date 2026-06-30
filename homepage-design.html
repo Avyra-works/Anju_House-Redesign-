@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ANJU HOUSE | Refined Heat &amp; LA Game Nights</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary": "#432b17",
+                "surface-bright": "#383a37",
+                "on-secondary-fixed": "#2b1705",
+                "outline": "#8e9192",
+                "on-error-container": "#ffdad6",
+                "inverse-surface": "#e2e3df",
+                "primary-container": "#121212",
+                "surface-container-highest": "#333533",
+                "surface-container-high": "#282a28",
+                "error": "#ffb4ab",
+                "secondary-fixed": "#ffdcc2",
+                "on-surface": "#e2e3df",
+                "on-primary-fixed": "#1c1b1b",
+                "on-tertiary-container": "#987a00",
+                "inverse-primary": "#5f5e5e",
+                "on-secondary-fixed-variant": "#5b412c",
+                "secondary-fixed-dim": "#e5bfa3",
+                "surface-container": "#1e201e",
+                "inverse-on-surface": "#2f312e",
+                "surface-container-low": "#1a1c1a",
+                "outline-variant": "#444748",
+                "tertiary-container": "#181100",
+                "primary-fixed": "#e5e2e1",
+                "tertiary-fixed": "#ffe088",
+                "on-primary-container": "#7e7d7d",
+                "primary": "#c8c6c5",
+                "surface-container-lowest": "#0d0f0d",
+                "error-container": "#93000a",
+                "on-primary": "#313030",
+                "surface-dim": "#121412",
+                "on-error": "#690005",
+                "surface-variant": "#333533",
+                "on-tertiary-fixed": "#241a00",
+                "on-surface-variant": "#c4c7c7",
+                "surface": "#121412",
+                "primary-fixed-dim": "#c8c6c5",
+                "tertiary-fixed-dim": "#e9c349",
+                "on-tertiary": "#3c2f00",
+                "surface-tint": "#c8c6c5",
+                "on-tertiary-fixed-variant": "#574500",
+                "tertiary": "#e9c349",
+                "on-primary-fixed-variant": "#474646",
+                "background": "#121412",
+                "on-secondary-container": "#d6b196",
+                "secondary": "#e5bfa3",
+                "secondary-container": "#5e442e",
+                "on-background": "#e2e3df"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "80px",
+                "margin-mobile": "24px",
+                "stack-md": "64px",
+                "container-max": "1440px",
+                "stack-xl": "120px",
+                "gutter": "32px"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-md": ["EB Garamond"],
+                "display-lg": ["EB Garamond"],
+                "headline-lg": ["EB Garamond"],
+                "display-lg-mobile": ["EB Garamond"],
+                "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                "display-lg-mobile": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .cinematic-overlay {
+            background: linear-gradient(0deg, rgba(18, 20, 18, 0.9) 0%, rgba(18, 20, 18, 0.4) 50%, rgba(18, 20, 18, 0.7) 100%);
+        }
+        .glass-nav {
+            background: rgba(18, 20, 18, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .scrolling-header.active {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            background: rgba(18, 20, 18, 0.95);
+        }
+        .asymmetric-grid-item:nth-child(even) {
+            transform: translateY(40px);
+        }
+        @media (max-width: 768px) {
+            .asymmetric-grid-item:nth-child(even) {
+                transform: translateY(0);
+            }
+        }
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
+<!-- TopAppBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-500 ease-in-out border-b border-outline-variant/10 shadow-sm glass-nav" id="navbar">
+<div class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-on-surface tracking-tighter hover:scale-105 transition-transform duration-200" href="#">
+                ANJU HOUSE
+            </a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-secondary border-b border-secondary pb-1 transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Reservations</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Game Nights</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Visit Us</a>
+</div>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-transform duration-200">
+                Book Now
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section: Full-screen Cinematic -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105" data-alt="A cinematic, wide-angle shot of a premium Los Angeles outdoor beer garden at night. Warm, golden string lights hang over rustic walnut wood tables and copper accents. The atmosphere is vibrant yet sophisticated, with soft focus on stylish people enjoying craft beers. The background features deep charcoal tones and modern architectural elements under a starry night sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6ZPPkf1L5HPUDsY5SJiVGA90NXWZrJS3s1ZNhPc59r-dkopXPnCsKkaNbaOe7m901AVJEdGnMY78IpdBccC74syvK8XZw0Zm3gDa10yqXMWRTkke3GZ-pkqPzDxLAwapaVkDO7ye3jlp6-IXTDu_mJcmL_HMSszPiPPxRAAc7QL_Awits-lUm_xE1p4fxMRsjDpddOaWUDsYKYEZz7Qv9D0sePksg4kN6SwoArYwXYP79Ukp015rKxkDkATS9tTOT8xXGJWWf7To1')"></div>
+<div class="absolute inset-0 cinematic-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-0 max-w-4xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 opacity-0 translate-y-10 animate-[fadeIn_1s_ease-out_forwards]">
+                    Where Korean Flavors<br/><span class="italic text-secondary">Meet LA Game Nights</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto opacity-0 translate-y-10 animate-[fadeIn_1s_ease-out_0.3s_forwards]">
+                    Authentic comfort food, live sports, and a craft beer garden in the heart of LA. Experience the refined heat of Seoul with the soul of the city.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center opacity-0 translate-y-10 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+<a class="bg-secondary text-on-secondary px-10 py-5 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-on-secondary-container transition-colors duration-300" href="#">
+                        Reserve Table
+                    </a>
+<a class="border border-on-surface/30 text-on-surface px-10 py-5 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-on-surface/5 transition-colors duration-300" href="#">
+                        Explore Menu
+                    </a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-on-surface-variant">
+<span class="font-label-caps text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-secondary to-transparent"></div>
+</div>
+</section>
+<!-- About Section: Elegant Split Layout -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 order-2 md:order-1 fade-in-on-scroll">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em] mb-4 block">Refined Heat</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">More Than A Restaurant</h2>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
+<p>Anju House was born from the desire to bridge generations. We take the soulful, spicy traditions of a Korean family kitchen and infuse them with the electric energy of Los Angeles nightlife.</p>
+<p>From our walnut-timbered interiors to our copper-toned accents, every detail is designed to make you feel at home—whether you're here for a quiet family dinner or the loudest championship game of the season.</p>
+</div>
+<div class="mt-10">
+<a class="inline-flex items-center gap-4 text-secondary font-label-caps text-label-caps uppercase tracking-widest group" href="#">
+                        Read Our Story
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2 mb-12 md:mb-0 relative fade-in-on-scroll">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A high-end editorial food photograph of an artisan chef in a modern dark kitchen, carefully garnishing a plate of Korean fusion food. The lighting is dramatic and moody, highlighting steam rising from the dish and the rich textures of walnut wood in the background. The aesthetic is premium minimalism with deep charcoal and warm copper tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0VFFlQy28E7HGj-Mb3eefn2zjBJ2e9sj_YoMybk4o4TTlwNECyeUKRWhtbKuvCOIQM2CSvkwmAK8VpWqEMcvmFiODEhTZDLjCdR5fyrn6FM4QnDjpnR8-a5_o6fiV0HaxkYB_GBcTkA9W28FOykr8wYW3HQkvhgL9eznThtvI-e2sB-ASSWZn_DxxZPzCKyiqo6YmeIwKKN_CrGX07-Xr7l9nfbZPElT2nBuw56qMNFDxXDxvdzEpSU0fWjsMZu9OjPqhOdiFyUX1"/>
+</div>
+<div class="absolute -bottom-8 -left-8 hidden md:block w-64 h-80 rounded-xl overflow-hidden shadow-2xl border-8 border-surface-container-lowest">
+<img class="w-full h-full object-cover" data-alt="A close-up atmospheric shot of glowing string lights reflected in a glass of amber-colored craft beer on a dark wood table. The background is blurred, showing the warm ambiance of a bustling night in a sophisticated outdoor beer garden. The color palette is dominated by warm golds, deep browns, and charcoal blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6CTxRLGTegFXy_TQlxx3JnpUoMa-MjDlGeZuk7oVSK_3PSb9SNuAdsqIDBKhAb6zc0fAtoA58r4OiHFlAgZtQQ8VXw5ksSqU9_H8D6s6pM9YYfzwGgGpfkla1vZBSyfjrfIiDTQ_0Kq7sTUabHbBIDCdo__egaCLrkcWM11u1XDHQ-BiViEj_KKRik6ekie9dSJv8E9RDmzTYljWSpKHD2Prhs0X_GR-wJ6qMl08KPg6YRvyfbGepBJFS90q4cyuEcqHZhy-FeC3"/>
+</div>
+</div>
+</section>
+<!-- Signature Dishes: Cinema Cards -->
+<section class="bg-surface-container-lowest py-stack-xl">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl fade-in-on-scroll">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em] mb-4 block">The Selection</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Signature Flavors</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-300 uppercase tracking-widest fade-in-on-scroll" href="#">View Full Menu</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden fade-in-on-scroll">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A stunning, top-down culinary photograph of Kimchi Bacon Pasta. The dish is presented in a deep charcoal ceramic bowl on a dark wood surface. Vibrant red kimchi sauce contrasts beautifully with crispy golden bacon bits and fresh green herbs. Soft side-lighting emphasizes the creamy texture and rich colors. The mood is high-end and appetizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9HGvWrz3AvlexFEBQcsiSOetgnIpHjYYdwpPUmTbbT_vlDr8z7LPGr-X1Roh1bs0I5ZsHaH7PVqQwpLGMevglPeF0abKr9c4OXOqqxVYfeifwHDcaaBa0kqcXKwTRqmSA4JSvcagcl9esWW0QypiE5udEDKcxz4cChFH6VCEhi0RRxcY2EjqFu32HwJqXfb21zOFdFSQttdq5Lt1Ee7O6U46J7r-yHkBO4YFJFdrxCDpJ_eWpsmfb09XlONkF6JI8VQee0MLZL-P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-3 py-1 rounded-full uppercase w-fit mb-4">Chef Recommendation</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Kimchi Bacon Pasta</h3>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-white/70 italic">Smoky, tangy, and perfectly creamy</p>
+<span class="font-label-caps text-secondary text-lg">$24</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden fade-in-on-scroll" style="transition-delay: 0.1s;">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A close-up, dramatic shot of Rose Dukboki (Korean rice cakes) in a rich, creamy orange sauce. The plate is garnished with melted cheese and fresh scallions. The setting is a moody, dimly lit dining table with warm copper accents in the background. The lighting is cinematic, focusing on the glossy texture of the sauce. High-end food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkYWMsM4SKpBuFRGcp13gi10bbtaob7QQl44FxipgqFU-C-GMyqE-9Sy3gYOGQ1XwQ21SUmKNUihjbv1AAF3bTjMoZ8rvFyqyQhxHXZBus9Rlsx7CZLb1cSp6WBSpoIsA_kqdoUvBusAbkenNBR6nCV9OxMD6-B0hOoGcm6I6Dgz2ELQLmcT2QCVAO6K5TmRPWtYfodd1o6iRdyzU1hcUM7Ub430PR8SYTf0mDmFXf_G79oaFx5OPhXqXfZN0bVjvFtimbEk8vS1Bl"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Rose Dukboki</h3>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-white/70 italic">The ultimate spicy comfort classic</p>
+<span class="font-label-caps text-secondary text-lg">$22</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[3/4] rounded-xl overflow-hidden fade-in-on-scroll" style="transition-delay: 0.2s;">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A crisp, high-resolution photo of Korean Fried Chicken wings, glazed in a glossy sweet and spicy red sauce, topped with sesame seeds. The wings are stacked on a rustic dark wood platter next to a cold, frosty glass of craft beer. The environment is an upscale bar with warm ambient lighting and charcoal walls. The focus is sharp on the crunchy texture of the chicken." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAzxj9CxhspZvnfuaFQCyMw8qov_X5VsViAGTMYTMddXleZ0uYnz59Ns5JaDTlBnB1ixz55sgASvABaCjlt6FsGA0UPUAaRzesRTBaqQqUsTwRsmZwMgTLiI3FzZ32-cu07VBkqipv__U1t94wrhggyQEJdpqRbqADjljMxlYc0IWB8XP9WIlB23F9OidI27rJJsbbxam8c0ecoRL6O5_Zi_psDy_2i7MwIi643oR5z_S6fgmaBIw383m-G8OgSZzG6qguPFh2BHUi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-10 flex flex-col justify-end">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-3 py-1 rounded-full uppercase w-fit mb-4">Chef Recommendation</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Korean Fried Chicken</h3>
+<div class="flex justify-between items-center">
+<p class="font-body-md text-white/70 italic">Double-fried for maximum crunch</p>
+<span class="font-label-caps text-secondary text-lg">$28</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sports Experience Section: Full-width Immersive -->
+<section class="relative h-[819px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high-energy cinematic wide shot of a crowded, upscale sports bar in Los Angeles at night. Large HD screens on dark walls display a major game. Diverse groups of friends are cheering and raising glasses of beer. The lighting is dynamic, with cool blues from the screens contrasting against warm walnut wood furniture and copper pendant lights. The atmosphere is electric and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYznxMjY5cWATY768O6d-M_yQ-I62GYoripwKeXaQOr0jMi4NydRnDF7q7WljIESF9yW2W_sDAJJ7gP53YXsBSDUS2ZyCCMx8LYluuN8_YZhTEixTn0WPqtgOfTqebnKq4CH0T0VtRaCTNm7nVi5bFRmJDomDVrl1lbuSaIvSjUUbKUqRYXyUZ5eRR1YINlMVneu7fO_gqvZ-WG8mIQcTGXkLZnUe7ToOIyb1qCOWUqnAUKAhUSOOvxgvzzcRF4SWtdl--CLDzI1kK')"></div>
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-center">
+<div class="inline-flex items-center gap-3 bg-secondary/20 border border-secondary/30 px-6 py-2 rounded-full mb-8 backdrop-blur-md">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">Live Game Nights</span>
+</div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">Every Game<br/>Feels Bigger Here.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">From World Cup matches to the Super Bowl, experience sports with crystal-clear displays, immersive sound, and a community that shares your passion.</p>
+<a class="bg-secondary text-on-secondary px-10 py-5 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-transform duration-300" href="#">
+                    View Game Schedule
+                </a>
+</div>
+</section>
+<!-- Beer Garden Section: Focus on Night Ambience -->
+<section class="py-stack-xl bg-background overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative fade-in-on-scroll">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="rounded-xl overflow-hidden aspect-[4/5] scale-95 origin-bottom-right">
+<img class="w-full h-full object-cover" data-alt="Close up shot of heavy walnut wood beams and intricate architectural details of a modern pergola in a luxury beer garden at night. Soft warm lighting glows from hidden sources. The palette is rich browns and dark shadows, conveying a sense of tactile luxury and sophisticated construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs5OE1MeY924uKYsLX03vpxzdvQs47JEcy2ubu84rU9EomCBYqJycS6Zw6Rozs-U366uziox0CNWOmrJS8Yk3EdlT7MY7YBMP3Kx1EMjKEKljdBAF4lJwaHzXDIrYKzemYSA6iHAWHrC1r0ngTAlFkALbk4kuvb_fV7cvL__uDgYWvkFMrgsmIXGoIItCSdGuEn2Vyx0ZJX1lZcerhDK63S5Ng0QtDm1iSeFnnx5JHR3s_8kGGzOGelQkiRJBAVhkFGXOMXfx4A9iL"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-square">
+<img class="w-full h-full object-cover" data-alt="An evening shot of an outdoor lounge area with modern low-profile seating around a stylish copper fire pit. The floor is dark slate and the surroundings are lush with architectural greenery. People in the background are blurred, emphasizing the peaceful and warm night-time atmosphere. Aesthetic is high-end hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCniHyppQmHbCJZFQQY6bBuR3xcV_1qKyjPVy-Btm5T6aAC0JQAJ9y0TNHishVx5JvQ2M71sJnCVtU_4ZI1IhLupxMfIXn6YZlf1jOhEuUYEnuJmjDWxTPFhUjvBgZMrC7vft2_rDdEmVXZhunEP9-6GBeVBNwIiis0SvkHA6a3TbemdnsyuB-RTKlOfbe5PYLbB-RRwgydjGorasjKlIN1_VCIl-vyxj1vmTB8_6M2FSaYmt5bHSENWCNUQ0rpm5SM4EoipsPf-6Be"/>
+</div>
+</div>
+<div class="pt-12">
+<div class="rounded-xl overflow-hidden aspect-[4/5]">
+<img class="w-full h-full object-cover" data-alt="A wide view of a craft beer garden at dusk. The sky is a deep indigo, and the warm orange glow of interior lights spills out through large glass walls onto a courtyard filled with wooden tables and hanging copper lanterns. The mix of traditional Korean elements and modern LA design is evident. Sophisticated and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8ZIn2oO539tJ89tVneRc8VSFwtXCnO99MMtiCT4xohKQWH5MkT3iqmhraM5LNsyRgTG1Z1wjAioT8yUQghdyrdCoJKAxiQ973uLNnb75H519AXOhRr7-suMyjZTZ7otsksDAyiNge2YHRhRFmcgZzD2ewC_6gTaMFNNMGOSGGtsQTSo3a54PppHqgWMu_9cF4lw7OJNYvXVS_WEED5eLKsUG-Eomvt5DdUO8Gb3qyVsSq2AYzQ4VdNla5qIfbAugCIAf5XmE5HoiP"/>
+</div>
+</div>
+</div>
+</div>
+<div class="fade-in-on-scroll">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em] mb-4 block">Outdoor Oasis</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">The Beer Garden</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Escaping the city bustle doesn't mean leaving it. Our beer garden is an architectural sanctuary featuring century-old reclaimed walnut and handcrafted copper fixtures, curated for the ultimate night under the LA stars.</p>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary">sports_bar</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-1">24 Rotating Taps</h4>
+<p class="font-body-md text-on-surface-variant">Local LA crafts and rare Korean imports.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary">ac_unit</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest mb-1">Climate Controlled</h4>
+<p class="font-body-md text-on-surface-variant">Warm fires in winter, cool misters in summer.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Reviews: Minimal Testimonials -->
+<section class="py-stack-xl bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center mb-16 fade-in-on-scroll">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Guest Experiences</h2>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 fade-in-on-scroll">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-8 italic">"The best fusion I've had in years. That Kimchi Bacon Pasta is life-changing, and the atmosphere during the Dodgers game was unmatched."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young, stylish urban professional smiling gently, captured in soft natural light. The background is a blurred high-end restaurant interior with warm tones. Editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADf5m01wKRbFCgZj-I6eIBbK1kxrkqO_ElEvBc0yAo6LteuZJ1gEQJIaE1zfPO79Vb3kvSewaZ9R7SroZtc6-gRp0UB-uJolsU1qtf3bRE7B8ev3FvqRjxKhlyEQELtzNZx256OFdcByBbCsVRYp3KLhzoviy76NqRfhb1Usa0FQlw_SWltUYclFyYkEpA2-bbFOblJW0wpN_F72C4ZS6oe353g-gHOZf6DtOvaUKVLVE-NqWIRlcDts4G1orsCDEAyMVf4CUcnkTi"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">James Rivera</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">Local Guide</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 fade-in-on-scroll" style="transition-delay: 0.1s;">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-8 italic">"Anju House feels like a secret garden in the middle of LA. The copper accents and walnut wood give it such a premium, cozy feel."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a sophisticated woman with an elegant style, looking into the camera with a warm expression. Bright, airy photography style with soft bokeh background. Editorial portrait look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ybmuz6BZo2VgwaT9d6M-g8HJj-1m6rbwo5dDWP-wEHmBQHutKk8FSEAcmY-ZtHNXgkRSh2tn4nhb_lRU9TJBojnq_Y68MaYILZBNFaZ-CEmN0sHE1DNQmRu4Jgqnsz6cOi2hRgjn6jZsVSVSSHdI5Hxa9WgLDPJspwW-FzQT0YErXmoW6DWwrCjAXWAihoCiKWDvTSc-zBCbQVSL-uDEaqDDVtj7_9LLg0_MLj7XYRnx19BQCVcQKRfYAktPlta4QikPgtsYJT8Y"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Elena Choi</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">Food Critic</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 fade-in-on-scroll" style="transition-delay: 0.2s;">
+<div class="flex gap-1 text-secondary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-on-surface-variant mb-8 italic">"Great beer list, incredible wings, and the staff treats you like family. It's our new weekend ritual for watching Lakers games."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a cheerful man with a modern athletic look, smiling broadly. High-quality photography with vibrant lighting and a clean, blurred background of a modern bar setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR9fQSirvUHEXejvfTjEsx6vI5uAqes0ddPSKgwLtA4y0BKdIPUVNzVCZB877hQKirfh4bkLFtIryV4Y8t4tFLJW8Mrn8jjSqpL2-c_sx04CEjAz7N2zy6cA-PaIbTA5ihZyatIzj-OUWKKHP5fzMFmn0kzKg1g8Y0Lbk58wnjGIRjCVzVTO87maCmIxzkkYw6to6bzQx07uWbLhgndFBq4rfd66RqFqpwRyeEvr1cbqe9PvbaUNDvcpn6jE1cARzvDANcDC3a9E_N"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface uppercase tracking-widest">Marcus Thompson</p>
+<p class="font-body-md text-[12px] text-on-surface-variant">Sports Fanatic</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram: Masonry Gallery -->
+<section class="py-stack-xl">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center mb-16 fade-in-on-scroll">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.3em] mb-4 block">Follow Our Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">@ANJUHOUSELA</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+<div class="space-y-4">
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="Instagram style shot of a group of friends laughing and clinking glasses of colorful Korean cocktails in a dimly lit, high-end bar. The lighting is warm and amber, creating a sense of joy and community. Premium cinematic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ma81DDAa0UktH52DzN1pu5PjT3PNZ8tME10lOJvmi85dOQKLgBAR4cZei6Cc3RGyvbLl0NsjX1qyBtFiNcWt7I1ahKg_xjPB8LEYXvhjl1Rf-rsI5pc_p4VQT60JdmRlNRp7p1Qhknj-pGFVLjkmqshf86vEO3NB1GAhHwSoDM4_OFuRqPwpCsGwHyTJca1cmE4Ug9FiBM9pK3KXkSkmWNSWYSCYNQ0fa1WftsfyvXSR2QYskYoWlJEE5wRjgwt4g1fwABFdOyJC"/>
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="Close-up artistic shot of a small plate of appetizers featuring vibrant greens and spicy reds, presented on a dark textured ceramic plate. High-key lighting highlights the freshness of the ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-4eqEkNXaMyesMwTBh-eQlWea9wK09mhk7lOYM5FoVndGAPGrrqyyZqza2X9gUapq47_KH69KStANw-9GJksQ9RSS4lwR6ZtHgbcleRKyQo0g3RxYXIza6EqgkW2SdLHns0VMyJsz450fN2QPjQNOClNQ-yWsR9_wzxB1y1eNUpk6thIGiVW0dyCaecRteXs6KF7pJL4vPKusbOpcvBD93e628cnYcdX0SBCXcadLKbPpxrChqzysca2MEJKxwma03PaxwW3mwAl5"/>
+</div>
+<div class="space-y-4">
+<div class="h-64 bg-secondary/5 rounded-xl flex items-center justify-center p-8 text-center fade-in-on-scroll">
+<p class="font-headline-md text-secondary">Join us for the Playoffs this weekend!</p>
+</div>
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="A beautiful wide shot of the beer garden with a large screen showing a live football match. The night sky is deep blue, and the garden is packed with people. The energy is palpable through the screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqhjYBXq_R7SX3f_hIj51MVN8qHdoZ74NhSickEDU6rOeqP99sqYcMlgvRk_QOPp2aaFFRTNtP2QMQkAHYEsZRI0JyHyKIMGM9i6P_DRmxYDi0gfmh33fTOTLSuaz6wwT9vzTUqwWVyyAyJmv2YIFSRq6xUEJEuJGuKFZ9oiLBRXA074FJlI_3crqJiB14mAqu7QGEaR2dyYrJiZ1O7EMx3H_EfEkQ8ZaPq_VuwlH3zwvkxXoH8LfSYlU5zbBtwd4XrD_ErU9VGtR"/>
+</div>
+<div class="space-y-4">
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="Extreme close-up of steam rising from a bowl of spicy Korean stew. The orange-red broth glows under warm light, and the textures of the ingredients are sharp and appetizing. Editorial food shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB58ANtn1V0hvsaqx15ZwIunYsZlxAbvQyCthyVZWm-B8nd5q_zQe49mwPgdNCKN9MOWoysFAji_iVPap5UELt2qaXPhXmmTvHEPQOtlRr8PLLWXbXkrYJKmMk3spobMV42jgXMcCu0dMHhSB6Rlbf8kjmiziVKn_2nHeSs1m0nN_Mn41SIAxkOr8Skdg7dwwx1z09McOq3aoVnLJVUnKbWIRCL0V2qyTnpuenPaAbYX09Robw6kYimys3L9szH4__f1Kop-q5a4gbI"/>
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="Candid shot of a bartender with tattoos expertly pouring a craft beer into a branded glass. The bar is made of dark walnut wood and the background is filled with glowing liquor bottles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCQ9snCOCr-TMHjswl69Q91eqn7GPrWMV9J8glCtGiWbYLqZFQkTuHphLQjFydL-ORhfs7KFOwNU1KQaRjp3riGJgxojQSKlx0WS_v4mmP5UgMfVQLlPPvj8EDvAQiH7x4hHohsKK2c7ZbO5l7qpnCnFlKdCgK0Dmg6bJgQbLl0pJFPMA_w8n9dPZ87fvN6R_x9ag6yxGOLs4xdaHt5IqhEpyJ9B9yzNe0Iyo2cTAV79znHQ15Sqn2ldN8kRQdxR1pwQHACFrmSg6u"/>
+</div>
+<div class="space-y-4">
+<img class="w-full rounded-xl fade-in-on-scroll" data-alt="A stylish flat-lay of several signature dishes, two beers, and a pair of sunglasses on a rustic wood table. The composition is artistic and editorial, suitable for a high-end travel magazine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPgaHi73zudhAAfD01N8lu2cJ8IFOfwhGmUD0TEmQ8BC3PJbXFgvR7qAEE6jdxsmkSBmGqcaGxkS9bYmQx8GXxMNWfh0U-zWm2vjbH_WP2upPMEqFURY2HN4lDSVrELCdxWg_1yUm-ybEuZdrL2PfMmcF01IY5SbB1W0tYlFFOFUuqa7glO5S27YryIkRN-BupacEnds8QDlZa8o3VuodyI-3jq3wjyGCaiUiqObNN8LhzyYLoVh1GspJlI9FTQBMYJA1ujNcbNzbp"/>
+<div class="h-48 rounded-xl overflow-hidden fade-in-on-scroll">
+<img class="w-full h-full object-cover" data-alt="A blurred, bokeh-heavy shot of copper lanterns hanging against a dark night sky. The light is soft and romantic, capturing the essence of the refined heat atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV74atblc64omOU-DkNuGm6e-55Vx2IQbYDrzQdlNYJeuDwZ_pA2f5s7ULvFQVi8zzLKPz86PagTBpzoTEE4XuFaFbVZP6gy4T2OlDZJKrWkXNdwX3DLbavDn3jVH6rWph8nCiNpmx7VVvukGTa-exOJPljNKZD3nKhmyRTCnAzneF0OvJgZKnO9TxjubF0HmGCZz7BXxgAGMgYA0kAmfoRy6gTLBsi77fdpWnp68ENxXGDAeJH3kOtXRB7uK3j1OmoTM3oMN7OQ9e"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full pt-stack-xl pb-stack-md border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto fade-in transition-opacity duration-700">
+<div class="md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">ANJU HOUSE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant pr-8">Bringing the heart of Seoul's nightlife to the streets of Los Angeles. Refined heat in every bite.</p>
+<div class="flex gap-6 mt-12 text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.2em] mb-8">Visit Us</h4>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<p>888 K-Town Way<br/>Los Angeles, CA 90005</p>
+<p>(213) 555-ANJU</p>
+<a class="text-secondary hover:underline" href="#">Get Directions</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.2em] mb-8">Hours</h4>
+<div class="space-y-4 font-body-md text-on-surface-variant">
+<p><span class="text-on-surface">Mon–Thu:</span> 4PM – 12AM</p>
+<p><span class="text-on-surface">Fri–Sat:</span> 12PM – 2AM</p>
+<p><span class="text-on-surface">Sun:</span> 12PM – 11PM</p>
+<p class="text-secondary italic">Kitchen closes 1hr before bar</p>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface uppercase tracking-[0.2em] mb-8">Newsletter</h4>
+<p class="font-body-md text-on-surface-variant mb-6">Join the inner circle for secret menu items and game night alerts.</p>
+<form class="relative">
+<input class="w-full bg-surface-container border-outline-variant/30 rounded-full px-6 py-4 focus:ring-secondary focus:border-secondary transition-all" placeholder="Email Address" type="email"/>
+<button class="absolute right-2 top-2 bg-secondary text-on-secondary p-2 rounded-full hover:scale-105 transition-transform" type="submit">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+<div class="mt-stack-md px-margin-desktop max-w-container-max mx-auto pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body-md text-on-surface-variant text-sm">© 2024 ANJU HOUSE. REFINED HEAT.</p>
+<div class="flex gap-8">
+<a class="font-body-md text-sm text-on-surface-variant hover:text-secondary" href="#">Business Hours</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-secondary" href="#">Valet &amp; Parking</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-secondary" href="#">Privacy Policy</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-secondary" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Scroll interaction for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('active', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('active', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => observer.observe(el));
+        
+        // Simple Micro-interaction for buttons
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.95)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

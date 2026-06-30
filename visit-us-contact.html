@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visit Us | ANJU HOUSE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=EB+Garamond:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#432b17",
+                    "surface-bright": "#383a37",
+                    "on-secondary-fixed": "#2b1705",
+                    "outline": "#8e9192",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e2e3df",
+                    "primary-container": "#121212",
+                    "surface-container-highest": "#333533",
+                    "surface-container-high": "#282a28",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#ffdcc2",
+                    "on-surface": "#e2e3df",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-container": "#987a00",
+                    "inverse-primary": "#5f5e5e",
+                    "on-secondary-fixed-variant": "#5b412c",
+                    "secondary-fixed-dim": "#e5bfa3",
+                    "surface-container": "#1e201e",
+                    "inverse-on-surface": "#2f312e",
+                    "surface-container-low": "#1a1c1a",
+                    "outline-variant": "#444748",
+                    "tertiary-container": "#181100",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-fixed": "#ffe088",
+                    "on-primary-container": "#7e7d7d",
+                    "primary": "#c8c6c5",
+                    "surface-container-lowest": "#0d0f0d",
+                    "error-container": "#93000a",
+                    "on-primary": "#313030",
+                    "surface-dim": "#121412",
+                    "on-error": "#690005",
+                    "surface-variant": "#333533",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface": "#121412",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-tertiary": "#3c2f00",
+                    "surface-tint": "#c8c6c5",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "tertiary": "#e9c349",
+                    "on-primary-fixed-variant": "#474646",
+                    "background": "#121412",
+                    "on-secondary-container": "#d6b196",
+                    "secondary": "#e5bfa3",
+                    "secondary-container": "#5e442e",
+                    "on-background": "#e2e3df"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "margin-mobile": "24px",
+                    "stack-md": "64px",
+                    "container-max": "1440px",
+                    "stack-xl": "120px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "display-lg-mobile": ["EB Garamond"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(13, 15, 13, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(229, 191, 163, 0.3);
+        }
+        .divider-copper {
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, #e5bfa3, transparent);
+        }
+        .input-focus-glow:focus {
+            outline: none;
+            border-color: #e9c349;
+            box-shadow: 0 0 10px rgba(233, 195, 73, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 shadow-sm transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-on-surface tracking-tighter hover:scale-105 transition-transform duration-200" href="#">ANJU HOUSE</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Menu</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Reservations</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Game Nights</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface hover:text-secondary transition-colors duration-300" href="#">Gallery</a>
+<a class="font-label-caps text-label-caps uppercase tracking-widest text-secondary border-b border-secondary pb-1" href="#">Visit Us</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:scale-105 transition-transform duration-200 rounded-lg">
+                Book Now
+            </button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[716px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic wide-angle photograph of a sophisticated Korean restaurant exterior at dusk. The building features dark charcoal brickwork and warm walnut wood accents around the windows. Golden interior lighting glows through the glass, casting a welcoming amber light onto the clean sidewalk. The mood is upscale and inviting, with a premium editorial feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWAwWV8Tr9ZXyof14-zYPMBSyZsuGjQstXFxHilpXPPxjZIhWyrvXxt45f9BP_y1njUnIzdYLZbnGwyGmkXRHyPc20t3eqngZsACxPoGQLYapgbjHbEmDlu-zaaTFtNq2_ham6hyx7OwHhVWY7_OeoIPnHpoS-2l7nO_8GZZVLRzLRbCWmTXVdPpNWIicoJX3O56rRRszX4K1oOF3eRuLPlsTly06RppNjyfX6JgAhNvY_dZ3WwUKfXLdahsO7GqG0IjDF2nD9Aje2')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface text-glow mb-4">Find Your Seat at Anju House.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Where traditional warmth meets the modern rhythm of the city. Join us for a refined evening of heat and hospitality.</p>
+</div>
+</section>
+<!-- Details Grid -->
+<section class="px-margin-desktop max-w-container-max mx-auto py-stack-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Info Left Column -->
+<div class="lg:col-span-5 flex flex-col gap-12">
+<!-- Business Hours -->
+<div>
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-8">Business Hours</h2>
+<div class="space-y-4 font-body-md text-body-md">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="text-on-surface">Monday – Thursday</span>
+<span class="text-on-surface-variant">5:00 PM — 11:00 PM</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="text-on-surface">Friday — Saturday</span>
+<span class="text-on-surface-variant">4:00 PM — 1:00 AM</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/20">
+<span class="text-on-surface">Sunday</span>
+<span class="text-on-surface-variant">4:00 PM — 10:00 PM</span>
+</div>
+<p class="text-tertiary mt-4 font-label-caps text-label-caps uppercase">* Kitchen closes 45 minutes prior to end of service.</p>
+</div>
+</div>
+<!-- Valet & Parking -->
+<div class="glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary">local_parking</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Valet &amp; Parking</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Complimentary valet service is available for all dinner guests starting at 5:00 PM nightly. Self-parking is located in the secure structure directly behind the restaurant on Walnut Ave.</p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-surface-container-highest rounded text-label-caps font-label-caps text-secondary uppercase">Valet Available</span>
+<span class="px-3 py-1 bg-surface-container-highest rounded text-label-caps font-label-caps text-secondary uppercase">Secure Lot</span>
+</div>
+</div>
+</div>
+<!-- Contact Form Right Column -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10 shadow-xl">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Get in Touch</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">For large parties, private event inquiries, or feedback, please reach out to our team.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps uppercase text-outline">Full Name</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-on-surface input-focus-glow transition-all" placeholder="Jin-ho Kim" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps uppercase text-outline">Email Address</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-on-surface input-focus-glow transition-all" placeholder="jinho@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps uppercase text-outline">Subject</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-on-surface input-focus-glow transition-all">
+<option>Private Dining Inquiry</option>
+<option>General Reservation Question</option>
+<option>Press &amp; Media</option>
+<option>Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps uppercase text-outline">Your Message</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-3 text-on-surface input-focus-glow transition-all" placeholder="Tell us about your event..." rows="4"></textarea>
+</div>
+<button class="w-full bg-on-secondary-container text-on-secondary font-label-caps text-label-caps uppercase tracking-widest py-4 rounded-lg hover:bg-secondary transition-colors duration-300" type="submit">
+                                Send Message
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map Section -->
+<section class="w-full h-[500px] relative bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<!-- Location: Los Angeles -->
+<div class="w-full h-full opacity-60 filter grayscale contrast-125 brightness-75" data-location="Los Angeles" style=""></div>
+</div>
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="glass-panel p-6 rounded-xl border border-secondary/20 pointer-events-auto max-w-sm text-center">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">ANJU HOUSE</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">1200 K-Town Plaza, Los Angeles, CA 90005</p>
+<a class="inline-block border border-secondary text-secondary font-label-caps text-label-caps uppercase px-6 py-2 rounded-lg hover:bg-secondary hover:text-on-secondary transition-all" href="https://maps.google.com" target="_blank">Get Directions</a>
+</div>
+</div>
+</section>
+<!-- Secondary Imagery / Atmosphere -->
+<section class="grid grid-cols-1 md:grid-cols-2">
+<div class="h-[400px] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700" data-alt="A close-up, editorial-style photo of the entrance of a high-end restaurant. A heavy, dark walnut door with a bespoke copper handle. The lighting is low and dramatic, highlighting the wood grain and the metallic sheen of the handle. Reflections of soft golden city lights are visible in the polished glass panel of the door." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNsjMJ2dsCv47SsdgC75_PYqv2asKbe7lz5JxrLSW_OgE6jZSqMHSG3r5Yst3PztUVGRxstisJZS5XVyRM6gsWhBrfR_igW4s5_AoGbPQNPU-IHVd9usUGWNBr1raKk_DzWujDt25Ooj5ZsrgnuzRid9L_qYwlyaGiSKGHyJfcMRB-ebVdpShrDdJikfLyiAvfMr0cJm7qxOxntB-OhRhC_2FO6zJDicbPV01YtCIArOdP3nP_gUI9sBSAG13DxToBNW9ZY91GYlp_')"></div>
+</div>
+<div class="h-[400px] flex flex-col justify-center px-margin-mobile md:px-20 bg-surface-container-low border-l border-outline-variant/10">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest mb-4">Atmosphere</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">A Space Designed for Connection</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our space was inspired by the communal spirit of the Korean 'Anju' culture—where food is meant to be paired with good company and exceptional drinks. Every detail, from the copper finishes to the ambient soundtrack, is curated to enhance your gathering.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-stack-xl pb-stack-md bg-surface-container-lowest dark:bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto fade-in transition-opacity duration-700">
+<div class="md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">ANJU HOUSE</h2>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps uppercase text-secondary mb-6">Location</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">1200 K-Town Plaza</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Los Angeles, CA 90005</p>
+</div>
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps uppercase text-secondary mb-6">Contact</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">P: (213) 555-0198</p>
+<p class="font-body-md text-body-md text-on-surface-variant">E: hello@anjuhouse.com</p>
+</div>
+<div class="md:col-span-1 space-y-4">
+<h4 class="font-label-caps text-label-caps uppercase text-secondary mb-6">Menu</h4>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Business Hours</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Valet &amp; Parking</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 ANJU HOUSE. REFINED HEAT.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for form inputs
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label').classList.replace('text-outline', 'text-tertiary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label').classList.replace('text-tertiary', 'text-outline');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'bg-surface/95');
+                nav.classList.remove('py-6', 'bg-surface/80');
+            } else {
+                nav.classList.add('py-6', 'bg-surface/80');
+                nav.classList.remove('py-4', 'bg-surface/95');
+            }
+        });
+    </script>
+</body></html>
